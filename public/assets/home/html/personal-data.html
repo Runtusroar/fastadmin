@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改个人资料</title>
+    <link rel="stylesheet" href="../css/profile.css">
+    <link href="../css/MyCenter.css" rel="stylesheet" />
+    <style>
+        .form .item {
+            padding: 13px 0;
+        }
+        .user {
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top_div">
+        <img src="../images/bac.jpg" class="top_img">
+        <div class="userInfo">
+            <img class="uPic" src="../images/pexels-spencer-selover-428364.jpg" /><br />
+            <span class="uBalance" style="color: rgb(74, 70, 66); ">Jack</span>
+        </div>
+    </div>
+    <div class="form">
+        <form>
+            <div class="item">
+                <div class="title" style="text-align: left;">
+                    昵称：
+                </div>
+                <input type="text" name="nickname" placeholder="请输入昵称">
+            </div>
+            <div class="item">
+                <div class="title" style="text-align: left;">
+                    邮箱：
+                </div>
+                <input type="text" name="email" placeholder="请输入邮箱">
+            </div>
+            <div class="item" >
+                <div class="title" style="text-align: left;">
+                    登录密码：
+                </div>
+                <input type="text" name="password" placeholder="请输入登录密码">
+            </div>
+            <div class="item">
+                <div class="title" style="text-align: left;">
+                    性别：
+                </div>
+                <div class="sex">
+                    <input type="radio" name="sex" value="0" id="secrecy" checked><label for="secrecy">保密</label>
+                    <input type="radio" name="sex" value="1" id="man"><label for="man">男</label>
+                    <input type="radio" name="sex" value="2" id="woman"><label for="woman">女</label>
+                </div>
+            </div>
+            <div class="item">
+                <div class="title" style="text-align: left;">
+                    地区选择：
+                </div>
+                <input type="text" name="adresss" placeholder="请输入地址">
+            </div>
+            <div class="item">
+                <div class="title" style="text-align: left;">
+                    个人简介：
+                </div>
+                <textarea name="content" cols="40" rows="5" placeholder="请输入个人简介"></textarea>
+            </div>
+            <div class="item">
+                <div class="title" style="text-align: left;">
+                    修改头像：
+                </div>
+                <input type="text" name="adresss" placeholder="请输入地址">
+            </div>
+            <div class="item">
+                <div class="title" style="text-align: left;">
+                    修改封面：
+                </div>
+                <input type="text" name="adresss" placeholder="请输入地址">
+            </div>
+            <input type="submit" value="修改资料" style="background-color: #674c3b; color: white;">
+        </form>
+    </div>
+</body>
+
+</html>

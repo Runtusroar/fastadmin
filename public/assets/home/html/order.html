@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <link href="../css/MyCenter.css" rel="stylesheet" />
+    <link href="../css/mui/mui.min.css" rel="stylesheet" />
+    <link href="../css/WeUI/weui.min.css" rel="stylesheet" />
+    <title>我的订单</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei';
+        }
+
+        p {
+            font-size: 4.5vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="top_div">
+        <img src="../images/bac.jpg" class="top_img">
+        <div class="userInfo">
+            <img class="uPic" src="../images/pexels-spencer-selover-428364.jpg" /><br />
+            <span class="uBalance" style="color: rgb(74, 70, 66); ">Jack</span>
+        </div>
+    </div>
+    <div class="page__bd" style="height: 100%;">
+        <div class="weui-tab">
+            <div class="weui-navbar">
+                <div class="weui-navbar__item weui-bar__item_on">
+                    视频购买记录
+                </div>
+                <div class="weui-navbar__item">
+                    会员购买记录
+                </div>
+            </div>
+            <div class="weui-tab__panel">
+                <div id="o1">
+                   
+                    <div class="weui-form-preview">
+                        <div class="weui-form-preview__hd">
+                            <div class="weui-form-preview__item">
+                                <label class="weui-form-preview__label">订单金额</label>
+                                <em class="weui-form-preview__value">¥69.00</em>
+                            </div>
+                        </div>
+                        <div class="weui-form-preview__bd">
+                            <div class="weui-form-preview__item">
+                                <label class="weui-form-preview__label">课程名称</label>
+                                <span class="weui-form-preview__value">Java基础</span>
+                            </div>
+                            <div class="weui-form-preview__item">
+                                <label class="weui-form-preview__label">购买时间</label>
+                                <span class="weui-form-preview__value">2018-03-01 13:43:33</span>
+                            </div>
+                            <div class="weui-form-preview__item">
+                                <label class="weui-form-preview__label">课程简介</label>
+                                <span class="weui-form-preview__value">Java基础课包含字符串简介、类和方法、面向对象...</span>
+                            </div>
+                        </div>
+                        <div class="weui-form-preview__ft">
+                            <a class="weui-form-preview__btn weui-form-preview__btn_default" href="./comment.html">评价</a>
+                            <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="./video-playing.html">立即查看</a>
+                        </div>
+                    </div><br />
+                    <div class="weui-form-preview">
+                        <div class="weui-form-preview__hd">
+                            <div class="weui-form-preview__item">
+                                <label class="weui-form-preview__label">订单金额</label>
+                                <em class="weui-form-preview__value">¥69.00</em>
+                            </div>
+                        </div>
+                        <div class="weui-form-preview__bd">
+                            <div class="weui-form-preview__item">
+                                <label class="weui-form-preview__label">课程名称</label>
+                                <span class="weui-form-preview__value">Java基础</span>
+                            </div>
+                            <div class="weui-form-preview__item">
+                                <label class="weui-form-preview__label">购买时间</label>
+                                <span class="weui-form-preview__value">2018-03-01 13:43:33</span>
+                            </div>
+                            <div class="weui-form-preview__item">
+                                <label class="weui-form-preview__label">课程简介</label>
+                                <span class="weui-form-preview__value">Java基础课包含字符串简介、类和方法、面向对象...</span>
+                            </div>
+                        </div>
+                        <div class="weui-form-preview__ft">
+                            <a class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">已评价</a>
+                            <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="./video-playing.html">立即查看</a>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                <div id="o2" style="display:none;">
+                    <br />
+                    <div class="weui-form-preview">
+                        <div class="weui-form-preview__hd">
+                            <div class="weui-form-preview__item">
+                                <label class="weui-form-preview__label">订单金额</label>
+                                <em class="weui-form-preview__value">¥100.00</em>
+                            </div>
+                        </div>
+                        <div class="weui-form-preview__bd">
+                            <div class="weui-form-preview__item">
+                                <label class="weui-form-preview__label">订单名称</label>
+                                <span class="weui-form-preview__value">年费会员</span>
+                            </div>
+                            <div class="weui-form-preview__item">
+                                <label class="weui-form-preview__label">购买时间</label>
+                                <span class="weui-form-preview__value">2018-03-01 13:43:33</span>
+                            </div>
+                        </div>
+                    </div><br />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-1.9.1.min.js"></script>
+     <script>
+         $(function () {
+             $('.weui-navbar__item').on('click', function () {
+                 $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+                 if ($('#o2').is(":hidden")) {
+                     $('#o2').show();
+                     $('#o1').hide();
+                 } else {
+                     $('#o2').hide();
+                     $('#o1').show();
+                 }
+             });
+         });
+     </script>
+</body>
+</html>

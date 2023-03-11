@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head> 
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="../js/amazeui.min.js"></script>
+<link href="../css/recharge.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../css/amazeui.min.css" type="text/css" />
+<link href="../css/mui/mui.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no" />
+<meta charset="utf-8">
+<title>充值</title>
+<style>
+/*充值账户*/
+.column_box p{ position:absolute;right:4%;top:0; color:#191919;}
+/*充值金额*/
+.money_box{ height:127px; position:relative; background-color:#fff;}
+.money_box h1{ line-height:39px; font-size:14px; color:#65646b; margin-left:4%;}
+.money_box h1 span{font-size:12px; color:#ff7f00;}
+.money{ float:left; width:20%; height:33px; line-height:33px; text-align:center; color:#191919; margin-left:4%; border:1px solid #ccc; border-radius:3px; box-sizing:border-box; background-position:left top; background-size:19px 19px; background-repeat:no-repeat;}
+.money_box input{ width:20%; height:33px; text-align:center; color:#65646b; border:1px solid #ccc; border-radius:3px; box-sizing:border-box; position:absolute;left:76%;top:39px;}
+input:placeholder{color:#191919;}
+.choose{ border:1px solid #674c3b; color:#674c3b;}
+.first{ height:23px; line-height:23px; width:20%; margin-top:7px; margin-left:auto; margin-right:auto; text-align:center; font-size:12px; color:#65646b; position:relative}
+.first .border_top{ top:11px; width:180%;}
+.money_box p{ text-align:center; font-size:12px; color:#ff7f00; line-height:12px;}
+
+/* all */
+.money_box input::-webkit-input-placeholder { color:#191919; }
+.money_box input::-moz-placeholder { color:#191919; } /* firefox 19+ */
+.money_box input:-ms-input-placeholder { color:#191919; } /* ie */
+.money_box input input:-moz-placeholder { color:#191919; }
+
+/*选择套餐*/
+.setmeal_box{ background-color:#fff; position:relative; padding-top:14px;}
+.setmeal_title{ line-height:13px; font-size:14px; color:#65646b; margin-left:4%;}
+.setmeal{ width:92%; margin-left:4%; position:relative}
+.setmeal > h1,.setmeal > h2{ line-height:42px; float:left; font-size:14px; color:#191919;}
+.setmeal > h2{ margin-left:10%; color:#c40000;}
+.setmeal img{ width:11px; height:auto; position:absolute; left:50%; top:20px;}
+.setmeal input{ float:right; width:16px; height:16px; margin-top:13px;}
+.text h1{ line-height:13px; font-size:14px; color:#191919; margin-bottom:13px;}
+.text h2{ line-height:11px; font-size:12px; color:#191919; margin-bottom:7px;}
+.text p{ line-height:17px; font-size:12px; color:#65646b;}
+/*推荐人手机号*/
+.column_box h1{ line-height:46px; float:left; color:#191919;}
+.column_box input{ width:130px; margin-left:27px;}
+</style>
+</head>
+
+<body style="background-color: #f9f9f9;">
+<!--header顶部标题-->
+<!-- <header class="mui-bar mui-bar-nav" style="position: sticky;">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: gray;" href="./personal-center.html"></a>
+    <h1 class="mui-title">充值</h1>
+</header> -->
+<!--充值账户-->
+<div class="column_box" >充值帐号
+	<div class="border_top"></div>
+    <p>15065431863</p>
+    <div class="border_bottom"></div>
+</div>
+<!--充值金额-->
+<div class="money_box">
+	<h1>选择充值金额&nbsp;&nbsp;&nbsp;&nbsp;<span>（100起充）</span></h1>
+    <div>
+    <div class="money choose" style="background-image:url(images/recommend.png)">500</div>
+    <div class="money">100</div>
+    <div class="money">200</div>
+    <input placeholder="其他" type="number">
+    </div>
+    <div class="clearfix"></div>
+    <div class="first">首次充值
+    	<div class="border_top" style="left:-180%;"></div>
+        <div class="border_top" style="right:-180%;left:inherit"></div>
+    </div>
+    <p>充100&nbsp;&nbsp;&nbsp;&nbsp;送100</p>
+    <div class="border_bottom"></div>
+</div>
+
+<!--推荐人手机号-->
+<div class="column_box" style="margin-top:14px; margin-bottom:100px;">
+	<div class="border_top"></div>
+	<h1 class="phone">推荐人手机号</h1>
+	<input placeholder="输入推荐人手机号">
+    <div class="border_bottom"></div>
+</div>
+<!--立即充值-->
+<div class="confirm_box">
+	<div class="confirm" style="background-color: #674c3b;" onclick="document.location='./recharge-complete.html';">立即充值</div>
+</div>
+<script>
+//隐藏赠送明细
+$(".text").hide();
+//隐藏套餐列表
+$(".setmeal_box").hide();
+//点击下拉按钮、显示赠送明细
+$(".down").click(
+	function(){
+		$(".text").hide();
+		$(this).siblings(".text").show();
+		$(".down").show();
+		$(this).hide();
+		}
+)
+//点击收起按钮，隐藏赠送明细
+$(".up").click(
+	function(){
+		$(this).siblings(".text").hide();
+		$(this).siblings("img").show();
+		}
+)
+//选择金额，改变所选金额样式
+$(".money").click(
+	function(){
+		$(".money_box input").css("border","1px solid #ccc");
+		$(this).addClass("choose").siblings().removeClass("choose");
+		$(".setmeal_box").hide();
+		}
+)
+//选择其他金额，显示金额输入框
+$(".money_box input").click(
+	function(){
+		$(this).css("border","1px solid #01aff0");
+		$(this).siblings().removeClass("choose");
+		$(".setmeal_box").show();
+		$(".money_box input").show();
+		}
+)
+</script>
+</body>
+</html>
+
