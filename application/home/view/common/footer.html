@@ -1,0 +1,37 @@
+<div id="tablist" class="mui-bar mui-bar-tab">
+    <a href="{:url('home/index/index')}" class="mui-tab-item">
+        <span class="mui-icon mui-icon-home"></span>
+        <span class="mui-tab-label">首页</span>
+    </a>
+    <a href="order.html" class="mui-tab-item">
+        <span class="mui-icon mui-icon-search"></span>
+        <span class="mui-tab-label">搜索</span>
+    </a>
+    <a href="{:url('home/person/index')}" class="mui-tab-item">
+        <span class="mui-icon mui-icon-contact"></span>
+        <span class="mui-tab-label">我的</span>
+    </a>
+</div>
+
+<script>
+  // 绑定点击事件
+  mui('#tablist').on('tap','a',function(){
+    location.href = this.href;
+  })
+
+  // 添加选中样式
+  let arr_one = location.pathname.split('/');
+  let arr_two = arr_one.slice(1,3);
+  let path = arr_two.join('/');
+  switch(path){
+    case 'home/index' || '':
+      $('#tablist a').eq(0).addClass('mui-active').siblings().removeClass('mui-active');
+      break;
+    case 'home/business':
+    $('#tablist a').eq(1).addClass('mui-active').siblings().removeClass('mui-active');
+      break;
+    case 'home/person':
+    $('#tablist a').eq(2).addClass('mui-active').siblings().removeClass('mui-active');
+      break;
+  }
+</script>
