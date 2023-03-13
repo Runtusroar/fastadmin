@@ -7,7 +7,7 @@
         <span class="mui-icon mui-icon-search"></span>
         <span class="mui-tab-label">搜索</span>
     </a>
-    <a href="{:url('home/person/index')}" class="mui-tab-item">
+    <a href="{:url('home/business/index')}" class="mui-tab-item">
         <span class="mui-icon mui-icon-contact"></span>
         <span class="mui-tab-label">我的</span>
     </a>
@@ -27,10 +27,10 @@
     case 'home/index' || '':
       $('#tablist a').eq(0).addClass('mui-active').siblings().removeClass('mui-active');
       break;
-    case 'home/business':
+    case 'home/search':
     $('#tablist a').eq(1).addClass('mui-active').siblings().removeClass('mui-active');
       break;
-    case 'home/person':
+    case 'home/business':
     $('#tablist a').eq(2).addClass('mui-active').siblings().removeClass('mui-active');
       break;
   }
